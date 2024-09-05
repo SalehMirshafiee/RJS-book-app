@@ -3,10 +3,15 @@ import { GoHeartFill } from "react-icons/go";
 
 import styles from "./BookCard.module.css";
 
-function BookCard({ data: { title, author, image, language, pages } }) {
+function BookCard({ data, handelLikedList }) {
+  const { title, author, image, language, pages } = data;
+
   const [like, setlike] = useState(false);
 
-  const likeHandler = () => setlike((like) => !like);
+  const likeHandler = () => {
+    handelLikedList(data, like);
+    setlike((like) => !like);
+  };
 
   return (
     <div className={styles.card}>
