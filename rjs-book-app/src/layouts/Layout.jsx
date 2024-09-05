@@ -5,7 +5,7 @@ function Layout({ children }) {
       <header className={styles.header}>
         <h1>Book App</h1>
         <p>
-          <a href="./">BOOKS</a> | Books: Brain Food!
+          <a href="./">BOOKS</a> | Books: Brain's Food!
         </p>
       </header>
       {children}
