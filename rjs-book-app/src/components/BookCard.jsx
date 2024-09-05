@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { GoHeartFill } from "react-icons/go";
 
+import styles from "./BookCard.module.css";
+
 function BookCard({ data: { title, author, image, language, pages } }) {
   const [like, setlike] = useState(false);
 
   const likeHandler = () => setlike((like) => !like);
 
   return (
-    <div>
+    <div className={styles.card}>
       <img src={image} alt={title} />
-      <div>
+      <div className={styles.info}>
         <h3>{title}</h3>
         <p>{author}</p>
         <div>
@@ -18,7 +20,7 @@ function BookCard({ data: { title, author, image, language, pages } }) {
         </div>
       </div>
       <button onClick={likeHandler}>
-        <GoHeartFill color={like ? "#efefef" : "#142f40"} fontSize="1.8rem" />
+        <GoHeartFill color={like ? "#fa9374" : "#142f40"} fontSize="1.8rem" />
       </button>
     </div>
   );
